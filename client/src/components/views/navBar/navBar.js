@@ -5,16 +5,12 @@ import './section/nav.css';
 function NavBar() {
 
   return (
-    <nav className="menu" style={{ position: 'fixed', zIndex: 5, width: '100%' }}>
+    <nav className="menu" style={{ position: 'fixed', zIndex: 5, width: '100%', backgroundColor: '#ffe2d8'}}>
       <div className="menu__logo">
         <a href="/">Logo</a>
       </div>
-
-      <div className="menu__container">
-        <div className="menu_rigth">
+      <div className="menu_rigth">
           <RightMenu mode="horizontal" />
-        </div>
-       
       </div>
       
     </nav>

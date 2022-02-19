@@ -1,9 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
-import { Menu } from 'antd';
 import axios from 'axios';
-//import { USER_SERVER } from '../../../../config';
-//import { withRouter } from 'react-router-dom';
 import { useSelector } from "react-redux";
 import {useNavigate} from 'react-router-dom';
 
@@ -22,31 +19,21 @@ function RightMenu(props) {
             console.log(response.data)
         })
     }
-
+  
   if (user.userData && !user.userData.isAuth) {
-    return (
-      <Menu mode={props.mode}>
-        <Menu.Item key="signin">
-          <a href="/login">Signin</a>
-        </Menu.Item>
-        <Menu.Item key="resgister">
-          <a href="/register">Register</a>
-        </Menu.Item>
-      </Menu>
+    return ( 
+      <ul>
+        <li><a href="/login">로그인</a></li>
+        <li><a href="/register">회원가입</a></li>
+      </ul>
     )
   } else {
     return (
-      <Menu mode={props.mode}>
-        <Menu.Item key="fav">
-          <a href="/favorite">Favorite</a>
-        </Menu.Item>
-        <Menu.Item key="comment">
-          <a href="/comment">Comment</a>
-        </Menu.Item>
-        <Menu.Item key="logout">
-          <a onClick={logoutHandler}>Logout</a>
-        </Menu.Item>
-      </Menu>
+      <ul>
+        <li><a href="/favorite">Favorite</a></li>
+        <a href="/comment">Comment</a>
+        <a onClick={logoutHandler}>Logout</a>
+      </ul>
     )
   }
 }

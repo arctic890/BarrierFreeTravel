@@ -28,7 +28,7 @@ export default function BasicExample() {
   return (
     <Router>
       <NavBar />
-      <div style={{ paddingTop: '69px', minHeight: 'calc(100vh - 80px)' }}>
+      <div style={{ paddingTop: '61px', minHeight: 'calc(100vh - 80px)' }}>
         <Routes>
             <Route exact path='/' element={Auth(Landing, null)} />
             <Route exact path='/login' element={Auth(Login, false)} />
