@@ -22,6 +22,7 @@ mongoose.connect(config.mongoURI, {
 
 //routing
 app.use('/api/favorite', require('./routes/favorite'))
+app.use('/api/place', require('./routes/place'))
 
 
 //register route
