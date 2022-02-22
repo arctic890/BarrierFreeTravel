@@ -1,0 +1,7 @@
+.info {
+    background-color: white;
+    margin-left: 5px;
+    position: relative;
+    z-index: 3;
+    border-style: solid;
+}

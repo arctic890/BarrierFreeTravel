@@ -3,13 +3,14 @@ import axios from 'axios'
 import {useNavigate} from 'react-router-dom'
 import MapL from './mapL'
 import Search from './search'
+import './landing.css'
 
 function Landing() {
    
 
     return (
         <div>
-            <div className='landing' style={{display: 'flex', justifyContent: 'center',alignItems: 'center', backgroundColor: '#ffe2d8'}}>
+            <div className='landing'>
                 <MapL></MapL>
                 <Search></Search>  
             </div>

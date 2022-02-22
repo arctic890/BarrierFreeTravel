@@ -24,12 +24,13 @@ import AddPlace from "./components/views/addPlace";
 // making sure things like the back button and bookmarks
 // work properly.
 //function AuthCheck()
+//style={{ paddingTop: '61px', minHeight: 'calc(100vh - 80px)' }}
 
 export default function BasicExample() {
   return (
     <Router>
       <NavBar />
-      <div style={{ paddingTop: '61px', minHeight: 'calc(100vh - 80px)' }}>
+      <div>
         <Routes>
             <Route exact path='/' element={Auth(Landing, null)} />
             <Route exact path='/login' element={Auth(Login, false)} />

@@ -3,6 +3,7 @@
   overflow: auto;
   clear: both;
   margin: 0px;
+  background-color: #ffe2d8 !important;
 }
 
 .menu__logo {
@@ -42,4 +43,9 @@ overflow: hidden;
   text-decoration: none;
   font-size: 15px;
   font-weight: bold;
+}
+hr{
+  color: #3d8af7;
+  border-top: 3px solid;
+  width: 98%;
 }

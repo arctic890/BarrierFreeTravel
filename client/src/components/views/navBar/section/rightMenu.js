@@ -30,9 +30,9 @@ function RightMenu(props) {
   } else {
     return (
       <ul>
-        <li><a href="/favorite">Favorite</a></li>
-        <a href="/comment">Comment</a>
-        <a onClick={logoutHandler}>Logout</a>
+        <li><a href="/favorite">즐겨찾기</a></li>
+        <a href="/comment">후기</a>
+        <a onClick={logoutHandler}>로그아웃</a>
       </ul>
     )
   }
