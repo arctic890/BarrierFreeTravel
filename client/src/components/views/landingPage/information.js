@@ -5,10 +5,11 @@ import './information.css'
 function Information(props) {
     let {place} = props
     console.log('place:',place)
+
     return (
       <ul className='info'>
         <li>{place.name}</li>
-        <li><Recommend/></li>
+        <li><Recommend placeId={place._id}/></li>
         <li>{place.address}</li>
         <li>{place.parking}</li>
         <li>{place.toilet}</li>

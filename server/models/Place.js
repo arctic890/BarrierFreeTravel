@@ -9,10 +9,10 @@ const placeSchema = mongoose.Schema({
         type: String
     },
     parking: {
-        type: Number    //0: not exist 1: not good 2: good
+        type: String   //0: not exist 1: not good 2: good
     },
     toilet: {
-        type: Number    //0: not exist 1: not good 2: good
+        type: String    //0: not exist 1: not good 2: good
     },
     holiday: {
         type: String

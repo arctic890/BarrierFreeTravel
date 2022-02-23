@@ -28,7 +28,6 @@ function Search() {
         Axios.post('/api/place/searchPlace', variable)
             .then(response => {
                 if (response.data.success){
-                    console.log(keyword)
                     console.log(response.data.result)
                     setSearch(response.data.result)
                     setResults(true)

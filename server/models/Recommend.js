@@ -7,28 +7,28 @@ const recommendSchema = mongoose.Schema({
         ref: 'Place' //bring info from user using objectId
     },
     visual: {
-        type: Number         //0: not recommend 1: need supporter 2: good
+        type: String        //0: not recommend 1: need supporter 2: good
     },
     intellectual: {
-        type: Number
+        type: String 
     },
     wheelchairM: {
-        type: Number
+        type: String 
     },
     wheelchairA: {
-        type: Number
+        type: String 
     },
     physicalW: {
-        type: Number
+        type: String 
     },
     auditory: {
-        type: Number
+        type: String 
     },
     senior: {
-        type: Number
+        type: String 
     },
     infant: {
-        type: Number
+        type: String 
     }
 },{timestamps: true})
 
