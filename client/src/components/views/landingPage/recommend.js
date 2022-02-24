@@ -9,22 +9,23 @@ import './recommend.css'
 
 function Recommend(props) {
 
-    const [Recommend, setRecommend] = useState([])
+    const [Recommend, setRecommend] = useState(null)
+    const [Connect, setConnect] = useState(false)
 
     let placeId = props
     let colorA = 'white'
 
     useEffect(()=> {
       getRecommend(placeId)
-    }, [])
+    }, [Connect])
 
     const getRecommend = (placeId) => {
         Axios.post('/api/recommend/getRecommend', placeId)
             .then(response => {
               if(response.data.success){
                 console.log(response.data.result)
-                setRecommend(response.data.result)
-                console.log(Recommend)
+                setRecommend(response.data.result[0])
+                setConnect(true)
               } else {
                 alert("fail to get recommendInfo")
               }
@@ -32,45 +33,49 @@ function Recommend(props) {
     }
 
     const colorAlert = (type) => {
-      //console.log(type, Recommend.type)
-      let test = Recommend.wheelchairA
-      console.log(type, test)
-      if (test =="0") {
-        return colorA = 'red'
-      } else if (test = "1") {
+      let test = Recommend[type]
+      //console.log(type, test) #ff3823 #72bb53
+      if (test == 0) {
+        return colorA = '#ff3823'
+      } else if (test == 1) {
         return colorA = 'orange'
-      } else if (test = "2") {
-        return colorA = 'green'
+      } else if (test == 2) {
+        return colorA = '#72bb53'
       }
     }
 
     return (
       <div>
-          <div className='recBox' title='전동휠체어 이용인 추천' style={{backgroundColor: colorAlert("wheelchairA")}}>
-              <MdOutlineAccessibleForward/>
+        {Connect &&
+          <div>
+            <div className='recBox' title='전동휠체어 이용인 추천' style={{backgroundColor: colorAlert("wheelchairA")}}>
+              <MdOutlineAccessibleForward className='icon' size= '18'/>
+            </div>
+            <div className='recBox' title='수동휠체어 이용인 추천' style={{backgroundColor: colorAlert('wheelchairM')}}>
+              <MdOutlineAccessible  className='icon'  size= '18'/>
+            </div>
+            <div className='recBox' title='시각장애인 추천' style={{backgroundColor: colorAlert('visual')}}>
+              <BsEyeSlash  className='icon'  size= '18'/>
+            </div>
+            <div className='recBox' title='청각장애인 추천' style={{backgroundColor: colorAlert('auditory')}}>
+              <MdHearingDisabled  className='icon'  size= '18'/>
+            </div>
+            <div className='recBox' title='지적장애인 추천' style={{backgroundColor: colorAlert('intellectual')}}>
+              <FaBrain  className='icon' size= '18'/>
+            </div>  
+            <div className='recBox' title='보행가능한 지체장애인 추천' style={{backgroundColor: colorAlert('physicalW')}}>
+              <MdFitnessCenter className='icon' size= '18'/>
+            </div>
+            <div className='recBox' title='고령자 추천' style={{backgroundColor: colorAlert('senior')}}>
+              <MdOutlineElderly className='icon' size= '18'/>
+            </div>
+            <div className='recBox' title='영유아 추천' style={{backgroundColor: colorAlert('infant')}}>
+              <GiBabyBottle className='icon' size= '18'/>
+            </div> 
           </div>
-          <div className='recBox' title='수동휠체어 이용인 추천' style={{backgroundColor: colorAlert('wheelchairM')}}>
-              <MdOutlineAccessible/>
-          </div>
-          <div className='recBox' title='시각장애인 추천' style={{backgroundColor: colorAlert('visual')}}>
-              <BsEyeSlash/>
-          </div>
-          <div className='recBox' title='청각장애인 추천' style={{backgroundColor: colorAlert('auditory')}}>
-              <MdHearingDisabled/>
-          </div>
-          <div className='recBox' title='지적장애인 추천' style={{backgroundColor: colorAlert('intellectual')}}>
-              <FaBrain/>
-          </div>  
-          <div className='recBox' title='보행가능한 지체장애인 추천' style={{backgroundColor: colorAlert('physicalW')}}>
-              <MdFitnessCenter/>
-          </div>
-          <div className='recBox' title='고령자 추천' style={{backgroundColor: colorAlert('senior')}}>
-              <MdOutlineElderly/>
-          </div>
-          <div className='recBox' title='영유아 추천' style={{backgroundColor: colorAlert('infant')}}>
-              <GiBabyBottle/>
-          </div> 
+        }
       </div>
+     
     )
 }
 

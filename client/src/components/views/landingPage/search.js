@@ -31,6 +31,7 @@ function Search() {
                     console.log(response.data.result)
                     setSearch(response.data.result)
                     setResults(true)
+                    setInfo(false)
                     setBackground(true)
                 }else{
                     alert("fail to get search result")
