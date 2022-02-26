@@ -24,7 +24,12 @@ function Information(props) {
     return (
       <ul className='info'>
         <li className='name'>{place.name}</li>
-        <li className='buttons'><Comment/><Course/><Near/><Fav/></li>
+        <li className='buttons'>
+          <Comment/>
+          <Course/>
+          <Near/>
+          <Fav userFrom={localStorage.getItem('userId')} placeName={place.name} placeAddress={place.address}/>
+        </li>
         <li className='rec'><Recommend placeId={place._id}/></li>
         <li>{place.address}</li>
         <li>장애인 주차장 {equipLevel(place.parking)} </li>

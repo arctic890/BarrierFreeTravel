@@ -3,7 +3,7 @@ import React, {useState} from 'react'
 import './search.css'
 import {BsSearch} from 'react-icons/bs'
 import { IconContext } from 'react-icons/lib'
-import Information from './information'
+import Information from './information/information'
  
 function Search() {
 
