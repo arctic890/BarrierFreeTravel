@@ -23,7 +23,7 @@ function Recommend(props) {
         Axios.post('/api/recommend/getRecommend', placeId)
             .then(response => {
               if(response.data.success){
-                console.log(response.data.result)
+                //console.log(response.data.result)
                 setRecommend(response.data.result[0])
                 setConnect(true)
               } else {

@@ -9,10 +9,6 @@ const favoriteSchema = mongoose.Schema({
     placeName: {
         type: String
     },
-    recommend: {
-        type: Schema.Types.ObjectId,
-        ref: 'Recommend'
-    },
     placeAddress: {
         type: String,
     },

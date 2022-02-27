@@ -13,7 +13,6 @@ router.post('/getFavorite', (req,res)=>{
         })
 })
 
-
 router.post('/remList', (req,res) => {
     Favorite.findOneAndDelete({placeName: req.body.placeName, userFrom: req.body.userFrom})
         .exec((err, result)=> {
@@ -32,6 +31,7 @@ router.post('/favorited', (req,res)=>{
             //return result to front
             let result = false;
             //if query result exists -> the movie is in favorite list
+            console.log('favorited:',info)
             if (info.length != 0) {
                 result = true;
             }

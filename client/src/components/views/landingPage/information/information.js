@@ -1,24 +1,39 @@
-import React from 'react'
+import React, {useState} from 'react'
+import './information.css'
+import Axios from 'axios'
 import Recommend from './recommend'
 import Comment from './comment'
 import Course from './course'
-import Near from './near'
 import Fav from './fav'
-import './information.css'
+import InfoList from './infoList'
+
 
 
 function Information(props) {
     let {place} = props
-    console.log('place:',place)
+    //console.log('place:',place)
+    //let {arroundColor} = 'white'
 
-    const equipLevel = (value) => {
-      if (value == 0) {
-        return "없음"
-      } else if (value == 1) {
-        return "있으나 시설 안좋음"
-      } else if (value == 2) {
-        return "있음"
-      }
+    const [Mode, setMode] = useState("Info")
+    const [Arrounds, setArrounds] = useState([])
+
+    const clickArround = () => {
+      getArround(place._id)
+      //arroundColor = '#a8c6fa'
+      setMode("Arround")
+    }
+
+    const getArround = (placeId) => {
+      console.log(placeId)
+      Axios.post('/api/arround/getArround', {placeId:placeId})
+        .then(response => {
+          if (response.data.success){
+            console.log(response.data)
+            setArrounds(response.data.results)
+          } else {
+            alert("fail to get arroundInfo")
+          }
+        })
     }
 
     return (
@@ -27,19 +42,11 @@ function Information(props) {
         <li className='buttons'>
           <Comment/>
           <Course/>
-          <Near/>
+          <button className='button1' onClick={clickArround}>주변 관광지</button>
           <Fav userFrom={localStorage.getItem('userId')} placeName={place.name} placeAddress={place.address}/>
         </li>
         <li className='rec'><Recommend placeId={place._id}/></li>
-        <li>{place.address}</li>
-        <li>장애인 주차장 {equipLevel(place.parking)} </li>
-        <li>장애인 화장실 {equipLevel(place.toilet)}</li>
-        <li>{place.holiday}</li>
-        <li>{place.fee}</li>
-        <li>보조기기 대여 {place.equipment}</li>
-        <li>편의/부대시설 {place.facility}</li>
-        <li className='ends'>해설사 {place.curator}</li>
-        <li className='desc'>{place.description}</li>
+        <InfoList mode={Mode} place={place} arrounds={Arrounds}/>
       </ul>
     )
 }
