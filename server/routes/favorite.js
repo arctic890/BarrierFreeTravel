@@ -7,14 +7,16 @@ const {Favorite} = require('../models/Favorite')
 //get favorite places
 router.post('/getFavorite', (req,res)=>{
     Favorite.find({'userFrom': req.body.userFrom})
+        .populate('placeId')
         .exec((err, favorites)=> {
             if(err) return res.status(400).send(err)
+            console.log(favorites)
             return res.status(200).json({success: true, favorites})
         })
 })
 
 router.post('/remList', (req,res) => {
-    Favorite.findOneAndDelete({placeName: req.body.placeName, userFrom: req.body.userFrom})
+    Favorite.findOneAndDelete({placeId: req.body.placeId, userFrom: req.body.userFrom})
         .exec((err, result)=> {
             if(err) return res.status(400).send(err)
             return res.status(200).json({success: true})
@@ -25,13 +27,13 @@ router.post('/remList', (req,res) => {
 ////////////////Info Page
 router.post('/favorited', (req,res)=>{
     //check if user add the movie in favorite list
-    Favorite.find({"placeName": req.body.placeName, "userFrom": req.body.userFrom})
+    Favorite.find({"placeId": req.body.placeId, "userFrom": req.body.userFrom})
         .exec((err, info) => {
             if(err) return res.status(400).send(err)
             //return result to front
             let result = false;
             //if query result exists -> the movie is in favorite list
-            console.log('favorited:',info)
+            //console.log('favorited:',info)
             if (info.length != 0) {
                 result = true;
             }
@@ -40,7 +42,7 @@ router.post('/favorited', (req,res)=>{
 })
 
 router.post('/removeFav', (req,res)=>{
-    Favorite.findOneAndDelete({placeName: req.body.placeName, userFrom: req.body.userFrom})
+    Favorite.findOneAndDelete({placeId: req.body.placeId, userFrom: req.body.userFrom})
         .exec((err,doc) => {
             if(err) return res.status(400).send(err)
             return res.status(200).json({success: true, doc})

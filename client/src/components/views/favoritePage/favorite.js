@@ -1,5 +1,6 @@
 import Axios from 'axios'
 import React,{useState, useEffect} from 'react'
+import Recommend from '../landingPage/information/recommend'
 
 function Favorite() {
 
@@ -23,9 +24,9 @@ function Favorite() {
     }
 
     //remove favorite
-    const onClickRem = (placeName, userFrom) => {
+    const onClickRem = (placeId, userFrom) => {
         const variables = {
-            placeName,
+            placeId,
             userFrom
         }
         Axios.post('/api/favorite/remList', variables)
@@ -39,14 +40,14 @@ function Favorite() {
     }
 
     
-    //list favorite
+    //list favorite  <Recommend placeId={place._id}/>
     const listCards = Favorites.map((favorite, index) => {
 
         return <tr key={index}>
-            <td>{favorite.placeName}</td>
-            <td>{/*favorite.recommend*/}</td>
-            <td>{favorite.placeAddress}</td>
-            <td><button onClick={()=>onClickRem(favorite.placeName, favorite.userFrom)}>삭제</button></td>
+            <td>{favorite.placeId.name}</td>
+            <td><Recommend placeId={favorite.placeId}/></td>
+            <td>{favorite.placeId.address}</td>
+            <td><button onClick={()=>onClickRem(favorite.placeId, favorite.userFrom)}>삭제</button></td>
         </tr>
     })
 

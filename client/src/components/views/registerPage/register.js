@@ -38,7 +38,7 @@ function Register() {
         }
 
         let body = {
-            name: Name,
+            userId: Name,
             email: Email,
             password: Password
         }

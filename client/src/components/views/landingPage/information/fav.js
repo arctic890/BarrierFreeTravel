@@ -5,19 +5,16 @@ import { useSelector } from "react-redux";
 
 function Fav(props) {
 
-  const userFrom = props.userFrom
-  const placeName = props.placeName
-  //const recommend = props.recommend
-  const placeAddress = props.placeAddress
+  //const userFrom = props.userFrom
+  const placeId = props.placeId
 
   const [Favorite, setFavorite] = useState(false)
   const user = useSelector(state => state.user)
+  const userFrom = user._id
 
   let variable = {
     userFrom,
-    placeName,
-    //recommend,
-    placeAddress
+    placeId
   }
 
   useEffect(() => {

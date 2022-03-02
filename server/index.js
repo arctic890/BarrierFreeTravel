@@ -25,6 +25,7 @@ app.use('/api/favorite', require('./routes/favorite'))
 app.use('/api/place', require('./routes/place'))
 app.use('/api/recommend', require('./routes/recommend'))
 app.use('/api/arround', require('./routes/arround'))
+app.use('/api/comment', require('./routes/comment'))
 
 
 //register route
@@ -75,7 +76,7 @@ app.get('/api/users/auth', auth, (req,res)=>{
       isAdmin: req.user.role === 0? false : true, //role !0 = admin
       isAuth: true,
       email: req.user.email,
-      name : req.user.name,
+      userId : req.user.userId,
       role: req.user.role,
       image: req.user.image
     })

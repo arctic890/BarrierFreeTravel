@@ -1,7 +1,8 @@
 import React from 'react'
+import Comment from './comment'
 
 function InfoList(props) {
-    console.log(props)
+    //console.log(props)
 
     const equipLevel = (value) => {
         if (value == 0) {
@@ -16,7 +17,7 @@ function InfoList(props) {
 
     if (props.mode=="Info"){
         let place = props.place
-        console.log(place)
+        //console.log(place)
         return (
             <div>
                 <li>{place.address}</li>
@@ -49,6 +50,26 @@ function InfoList(props) {
         return (
             <div>
                 {arroundList}
+            </div>
+        )
+    } else if (props.mode=="Comment"){
+        let comments = props.comments
+            
+        const commentList= comments.map((comment, index)=>{
+            //console.log(comment)
+            return (
+                <div key={index}>
+                    <ul>
+                        <li>{comment.writer}</li>
+                        <li className='end'>{comment.content}</li>
+                    </ul>
+                </div>
+            )
+        })
+        return (
+            <div>
+                {commentList}
+                <Comment placeId={props.place._id} refresh={props.refresh}/>
             </div>
         )
     }
