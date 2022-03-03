@@ -14,6 +14,7 @@ import NavBar from "./components/views/navBar/navBar";
 import Footer from "./components/views/footer/footer";
 import Favorite from "./components/views/favoritePage/favorite";
 import AddPlace from "./components/views/addPlace";
+import Comment from "./components/views/commentPage/comment"
 
 // This site has 3 pages, all of which are rendered
 // dynamically in the browser (not server rendered).
@@ -35,8 +36,9 @@ export default function BasicExample() {
             <Route exact path='/' element={Auth(Landing, null)} />
             <Route exact path='/login' element={Auth(Login, false)} />
             <Route exact path='/register' element={Auth(Register, false)} />
-            <Route exact path='/favorite' element={Auth(Favorite, null)} />
-            <Route exact path='/addPlace' element={Auth(AddPlace, null)} />
+            <Route exact path='/favorite' element={Auth(Favorite, true)} />
+            <Route exact path='/comment' element={Auth(Comment, null)} />
+            <Route exact path='/addPlace' element={Auth(AddPlace, true)} />
         </Routes>
       </div>
       <Footer />

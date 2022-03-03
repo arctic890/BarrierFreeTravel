@@ -10,7 +10,7 @@ router.post('/getFavorite', (req,res)=>{
         .populate('placeId')
         .exec((err, favorites)=> {
             if(err) return res.status(400).send(err)
-            console.log(favorites)
+            //console.log(favorites)
             return res.status(200).json({success: true, favorites})
         })
 })

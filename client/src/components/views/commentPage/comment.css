@@ -1,0 +1,41 @@
+html {
+    background-color: #ffe2d8;
+}
+
+.commentBox {
+    background-color: white;
+    border-style: solid;
+    border-color: #75a9f9;
+    border-width: 3px;
+    border-radius: 10px;
+    list-style-type: none;
+    padding: 10px;
+}
+
+.commentBox li {
+    margin-left: 10px;
+}
+
+h2 {
+    color: #3d8af7;
+}
+
+button {
+    border-radius: 15px;
+    background-color: #d4e3fc;
+    color: #75a9f9;
+    border-style: none;
+    margin: 3px 3px 3px 0px;
+    font-size: 11px;
+    float: right;
+}
+
+.name{
+    float: left;
+    font-size: 14px;
+}
+
+.content {
+    color : #606060;
+    padding-left: 10px;
+}

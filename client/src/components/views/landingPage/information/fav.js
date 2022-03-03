@@ -11,6 +11,7 @@ function Fav(props) {
   const [Favorite, setFavorite] = useState(false)
   const user = useSelector(state => state.user)
   const userFrom = user._id
+  //console.log(userFrom)
 
   let variable = {
     userFrom,
