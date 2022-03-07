@@ -3,7 +3,7 @@
     margin-left: 5px;
     position: relative;
     z-index: 3;
-    
+    width: 210px;
 }
 
 .info .rec {
@@ -17,7 +17,7 @@
     color: black;
     margin-bottom: 2px;
 }
-.info .ends{
+.info .end{
     margin-bottom: 4px;
 }
 .info .desc {
@@ -48,6 +48,28 @@
     display: inline-flex;
     align-items: center;
     justify-content: center; 
+}
+
+.mark {
+    background-color: #d4e3fc;
+    border-radius: 5px;
+    font-size: 11px;
+    color: #3d8af7;
+    padding: 3px;
+    margin: 2px;
+    display:inline-block;
+}
+
+.courseBox {
+    width: 200px;
+}
+
+#course {
+    white-space: normal;
+    word-break: keep-all;
+    word-wrap: break-word;
+    margin-top: 0px;
+    margin-bottom: 3px;
 }
 
 #heart {

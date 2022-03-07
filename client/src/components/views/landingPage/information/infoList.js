@@ -1,5 +1,6 @@
 import React from 'react'
 import Comment from './comment'
+import './information.css'
 
 function InfoList(props) {
     //console.log(props)
@@ -24,7 +25,7 @@ function InfoList(props) {
                 <li>장애인 주차장 {equipLevel(place.parking)} </li>
                 <li>장애인 화장실 {equipLevel(place.toilet)}</li>
                 <li>{place.holiday}</li>
-                <li>{place.fee}</li>
+                <li>입장료 {place.fee}</li>
                 <li>보조기기 대여 {place.equipment}</li>
                 <li>편의/부대시설 {place.facility}</li>
                 <li className='ends'>해설사 {place.curator}</li>
@@ -70,6 +71,32 @@ function InfoList(props) {
             <div>
                 {commentList}
                 <Comment placeId={props.place._id} refresh={props.refresh}/>
+            </div>
+        )
+    } else if (props.mode=="Course") {
+        let courses = props.course
+        const mark = (rec) => {
+            if (rec) {
+                return (
+                    <div className='mark'>추천</div>
+                )
+            }
+        }
+        const courseList = courses.map((course, index)=>{
+            return (
+                <div key={index}>
+                    <ul>
+                        <li>{mark(course.recommend)}</li>
+                        <li className='end' >
+                            <p id='course'>{course.course}</p>
+                        </li>
+                    </ul>
+                </div>
+            )
+        })
+        return (
+            <div className='courseBox'>
+                {courseList}
             </div>
         )
     }

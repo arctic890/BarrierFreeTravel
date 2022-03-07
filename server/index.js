@@ -26,6 +26,7 @@ app.use('/api/place', require('./routes/place'))
 app.use('/api/recommend', require('./routes/recommend'))
 app.use('/api/arround', require('./routes/arround'))
 app.use('/api/comment', require('./routes/comment'))
+app.use('/api/course', require('./routes/course'))
 
 
 //register route

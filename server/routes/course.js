@@ -1,0 +1,14 @@
+const express = require('express')
+const router = express.Router();
+const {Course} = require('../models/Course')
+
+router.post('/getCourse', (req,res)=>{
+    Course.find({placeId: req.body.placeId})
+        .exec((err, results)=> {
+            if(err) return res.status(400).send(err)
+            return res.status(200).json({success: true, results})
+        })
+})
+
+
+module.exports = router;

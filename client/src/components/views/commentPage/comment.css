@@ -20,7 +20,7 @@ h2 {
     color: #3d8af7;
 }
 
-button {
+.button2 {
     border-radius: 15px;
     background-color: #d4e3fc;
     color: #75a9f9;
@@ -30,7 +30,7 @@ button {
     float: right;
 }
 
-.name{
+.commentBox .name{
     float: left;
     font-size: 14px;
 }

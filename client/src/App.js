@@ -37,8 +37,8 @@ export default function BasicExample() {
             <Route exact path='/login' element={Auth(Login, false)} />
             <Route exact path='/register' element={Auth(Register, false)} />
             <Route exact path='/favorite' element={Auth(Favorite, true)} />
-            <Route exact path='/comment' element={Auth(Comment, null)} />
-            <Route exact path='/addPlace' element={Auth(AddPlace, true)} />
+            <Route exact path='/comment' element={Auth(Comment, true)} />
+            <Route exact path='/addPlace' element={Auth(AddPlace, null)} />
         </Routes>
       </div>
       <Footer />

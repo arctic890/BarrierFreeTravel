@@ -31,8 +31,14 @@ const placeSchema = mongoose.Schema({
     },
     description: {
         type: String
+    },
+    geometry: {
+        type: {type: String, 'default': 'Point'},
+        coordinates: [{type: 'Number'}]
     }
 },{timestamps: true})
+
+placeSchema.index({geometry:'2dsphere'})
 
 const Place = mongoose.model('Place', placeSchema)
 

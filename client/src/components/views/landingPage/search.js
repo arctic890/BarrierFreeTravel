@@ -5,7 +5,7 @@ import {BsSearch} from 'react-icons/bs'
 import { IconContext } from 'react-icons/lib'
 import Information from './information/information'
  
-function Search() {
+function Search(props) {
 
     const [Keyword, setKeyword] = useState("")
     const [Search, setSearch] = useState([])
@@ -33,6 +33,7 @@ function Search() {
                     setResults(true)
                     setInfo(false)
                     setBackground(true)
+                    props.markPlaces(response.data.result, 'Search')
                 }else{
                     alert("fail to get search result")
                 }
@@ -44,6 +45,7 @@ function Search() {
         setResults(false)
         setInfo(true)
         setPlace(result)
+        props.markPlaces([result], 'Info')
     }
 
     const listResult = Search.map((result, index) => {
@@ -76,7 +78,7 @@ function Search() {
             }
             {Info &&
                 <div className='tempo'>
-                <Information place={Place}/>
+                <Information place={Place} markPlaces={props.markPlaces}/>
                 </div>
             }
         </div>
