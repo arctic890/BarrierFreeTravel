@@ -1,6 +1,4 @@
 import React, {useEffect, useState} from 'react'
-import axios from 'axios'
-import {useNavigate} from 'react-router-dom'
 import MapL from './mapL'
 import Search from './search'
 import './landing.css'
@@ -8,7 +6,7 @@ import './landing.css'
 function Landing() {
 
     const [Marker, setMarker] = useState([])
-    const [Type, setType] = useState('')
+    const [Type, setType] = useState('')    //Search, Info, Arround
 
     const markPlaces = (places, type) => {
         if(places) {

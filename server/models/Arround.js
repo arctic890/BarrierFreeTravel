@@ -26,6 +26,10 @@ const arroundSchema = mongoose.Schema({
     },
     toilet: {
         type: Boolean,
+    },
+    geometry: {
+        type: {type: String, 'default': 'Point'},
+        coordinates: [{type: 'Number'}]
     }
 },{timestamps: true})
 

@@ -8,7 +8,8 @@ import InfoList from './infoList'
 
 
 function Information(props) {
-    let {place} = props
+ 
+    let {place} = props 
     //console.log('place:',place)
     //let {arroundColor} = 'white'
 
@@ -42,7 +43,7 @@ function Information(props) {
       Axios.post('/api/arround/getArround', {placeId:placeId})
         .then(response => {
           if (response.data.success){
-            console.log(response.data)
+            console.log(response.data.results)
             setArrounds(response.data.results)
             props.markPlaces(response.data.results, 'Arround')
           } else {

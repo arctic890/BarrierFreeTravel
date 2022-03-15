@@ -25,7 +25,7 @@ function InfoList(props) {
                 <li>장애인 주차장 {equipLevel(place.parking)} </li>
                 <li>장애인 화장실 {equipLevel(place.toilet)}</li>
                 <li>{place.holiday}</li>
-                <li>입장료 {place.fee}</li>
+                <li>{place.fee}</li>
                 <li>보조기기 대여 {place.equipment}</li>
                 <li>편의/부대시설 {place.facility}</li>
                 <li className='ends'>해설사 {place.curator}</li>
