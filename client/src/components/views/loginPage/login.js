@@ -35,6 +35,7 @@ function Login(props) {
         dispatch(loginUser(body))
             .then(response=>{
                 if(response.payload.loginSuccess){
+                    window.localStorage.setItem('userId',response.payload.userId);
                     navigate('/')
                 } else {
                     alert('Error')

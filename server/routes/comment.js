@@ -26,7 +26,7 @@ router.post("/addComment", (req,res)=> {
 
 router.post("/getCommentById", (req,res)=>{
     //console.log(req.body._id)
-    Comment.find({userFrom: req.body._id})
+    Comment.find({userFrom: req.body.userFrom})
     .populate('placeId')
     .exec((err, results)=> {
         if(err) return res.status(400).send(err)

@@ -6,20 +6,17 @@ import './comment.css'
 function Comment() {
 
     const [Comments, setComments] = useState([])
-
-    const user = useSelector(state => state.user)
-    console.log(user.userData)
-    let userFrom = user.userData
+    //console.log(Comments)
 
     useEffect(() => {
-        fetchComment()
-    }, [user])
+        fetchComment()      
+    }, [])
 
     const fetchComment = () => {
-        Axios.post('/api/comment/getCommentById', userFrom)
-            .then(response => {
+        Axios.post('/api/comment/getCommentById', {userFrom: localStorage.getItem('userId')})
+            .then (response => {
                 if (response.data.success){
-                    console.log(response.data)
+                    //console.log(response.data)
                     setComments(response.data.results)
                 }else{
                     alert("fail to bring comments")
@@ -28,7 +25,7 @@ function Comment() {
     }
     
     const commentRem = (commentId) => {
-        Axios.post('/api/comment/commentRem', commentId)
+        Axios.post('/api/comment/commentRem', {commentId:commentId})
             .then(response => {
                 if (response.data.success){
                     fetchComment()
@@ -43,8 +40,8 @@ function Comment() {
             <div key={index}>
                 <ul className='commentBox'>
                     <li className='name'>{comment.placeId.name}</li>
-                    <li className='button2' onClick={commentRem(comment._id)}><button>삭제</button></li>
-                    {/*<li className='button2' onClick={commentRem(comment._id)}><button>수정</button></li>*/}
+                    <li className='button2'><button onClick={()=>commentRem(comment._id)}>삭제</button></li>
+                    
                     <br/>
                     <li className='content'>{comment.content}</li>
                 </ul>

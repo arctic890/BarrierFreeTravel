@@ -12,6 +12,7 @@ function RightMenu(props) {
     axios.get('api/users/logout')
         .then(response => {
             if (response.data.success){
+                window.localStorage.clear()
                 navigate('/login')
             } else {
                 alert('Fail to logout')

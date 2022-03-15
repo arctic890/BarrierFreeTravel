@@ -5,13 +5,11 @@ import { useSelector } from "react-redux";
 
 function Fav(props) {
 
-  //const userFrom = props.userFrom
+  const userFrom = props.userFrom
   const placeId = props.placeId
 
   const [Favorite, setFavorite] = useState(false)
   const user = useSelector(state => state.user)
-  const userFrom = user._id
-  //console.log(userFrom)
 
   let variable = {
     userFrom,
