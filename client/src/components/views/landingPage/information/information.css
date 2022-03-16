@@ -4,6 +4,16 @@
     position: relative;
     z-index: 3;
     width: 210px;
+    height: 450px;
+    overflow-y: auto;
+}
+
+.info::-webkit-scrollbar {
+    width: 5px;
+}
+
+.info::-webkit-scrollbar-thumb {
+    background-color: #d4e3fc;
 }
 
 .info .rec {

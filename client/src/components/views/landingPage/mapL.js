@@ -38,8 +38,8 @@ function MapL(props) {
             center={{lat: Clat, lng: Clng}}
         >
           {markers.length != 0 && markers.map((marker,index)=> {
-            return (     
-              <Marker key={index} lng={marker.geometry.coordinates[0]} lat={marker.geometry.coordinates[1]}/>
+            return (
+              <Marker key={index} marker={marker} lng={marker.geometry.coordinates[0]} lat={marker.geometry.coordinates[1]}/>
             )
           })}            
         </GoogleMapReact>
