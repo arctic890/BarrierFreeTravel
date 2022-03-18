@@ -9,7 +9,9 @@
 .infowindow {
     background-color: white;
     border: solid 2px #a8c6fa;
-    min-width: 120px;
+    width: fit-content;
+    height: fit-content;
+    min-width: 20px;
     padding: 3px;
 }
 

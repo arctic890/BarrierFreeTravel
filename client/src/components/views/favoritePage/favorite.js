@@ -1,6 +1,6 @@
 import Axios from 'axios'
 import React,{useState, useEffect} from 'react'
-import Recommend from '../landingPage/information/recommend'
+import Recommend from '../landingPage/search/recommend'
 
 function Favorite() {
 

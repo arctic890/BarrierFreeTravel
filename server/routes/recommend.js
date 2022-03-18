@@ -9,5 +9,14 @@ router.post('/getRecommend',(req,res)=>{
             return res.status(200).json({success: true, result})
         })
 })
+router.post('/filter', (req,res)=>{
+    let recommend = req.body.rec
+    Recommend.find({[recommend]: 2})
+        .populate('placeId')
+        .exec((err, result)=> {
+            if (err) return res.status(400).send(err)
+            return res.status(200).json({success: true, result})
+        })
+})
 
 module.exports = router;
