@@ -2,7 +2,9 @@ import React, {useEffect, useState} from 'react'
 import MapL from './map/mapL'
 import Search from './search/search'
 import RecFilter from './filter/recFilter'
+import InfoFilter from './filter/infoFilter'
 import './landing.css'
+
 
 function Landing() {
 
@@ -24,7 +26,8 @@ function Landing() {
             <div className='landing'>
                 <MapL marker={Marker} type={Type}></MapL>
                 <Search markPlaces={markPlaces}></Search>
-                <RecFilter markPlaces={markPlaces}></RecFilter>  
+                <RecFilter markPlaces={markPlaces}></RecFilter>
+                <InfoFilter markPlaces={markPlaces}></InfoFilter>  
             </div>
         </div>
     )

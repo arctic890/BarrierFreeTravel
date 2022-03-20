@@ -11,7 +11,7 @@ router.post('/getRecommend',(req,res)=>{
 })
 router.post('/filter', (req,res)=>{
     let recommend = req.body.rec
-    Recommend.find({[recommend]: 2})
+    Recommend.find({$or : [{[recommend]: 2},{[recommend]: 1}]})
         .populate('placeId')
         .exec((err, result)=> {
             if (err) return res.status(400).send(err)

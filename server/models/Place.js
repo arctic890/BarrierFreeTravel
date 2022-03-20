@@ -12,7 +12,7 @@ const placeSchema = mongoose.Schema({
         type: String   //0: not exist 1: not good 2: good
     },
     toilet: {
-        type: String    //0: not exist 1: not good 2: good
+        type: String    //0: not exist /1: not good /2: good
     },
     holiday: {
         type: String
@@ -23,10 +23,10 @@ const placeSchema = mongoose.Schema({
     facility: {
         type: String
     },
-    equipment: {
+    equipment: {        //0:not service /else: exist
         type: String
     },
-    curator: {
+    curator: {          //0:not service /else: exist
         type: String
     },
     description: {

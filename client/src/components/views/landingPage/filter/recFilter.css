@@ -26,3 +26,26 @@ top: 110px;
     justify-content: center;
     align-items: center;
 }
+
+.infoFilter{
+    position: absolute;
+    right: 97px;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.filterBox {
+    display: flex;
+    height: 27px;
+    width: 27px;
+    z-index: 2;
+    margin: 4px;
+    border-radius: 6px;
+    padding: 1px;
+    background-color: white;
+    border: solid 1.5px #a8c6fa;;
+}
+
+.filterBox:hover{
+    background-color: #d4e3fc;
+}

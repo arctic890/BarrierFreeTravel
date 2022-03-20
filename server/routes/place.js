@@ -17,5 +17,14 @@ router.post('/addPlace', (req,res)=>{
     })
 })
 
+router.post('/filterCondition', (req,res)=>{
+    let condition = req.body.condition
+    Place.find({[condition]: {$nin: ['0', '없음']}})
+        .exec((err, result)=> {
+            if (err) return res.status(400).send(err)
+            return res.status(200).json({success: true, result})
+        })
+})
+
 
 module.exports = router;

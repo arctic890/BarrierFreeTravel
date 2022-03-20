@@ -16,7 +16,7 @@ function RecFilter(props) {
                     console.log(response.data.result)
                     findPlace(response.data.result)
                 } else {
-                    alert("fail to get recommendInfo")
+                    alert("fail to get recommendFilter")
                 }
             })
     }
