@@ -28,7 +28,7 @@ function InfoFilter(props) {
 
     const findPlace = (filterI) => {
         let places = filterI.map(({ placeId }) => placeId)
-        props.markPlaces(places, 'Filter')
+        props.markPlaces(places, 'Favorite')
         console.log(places)
     }
 

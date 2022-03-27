@@ -9,7 +9,7 @@ import './landing.css'
 function Landing() {
 
     const [Marker, setMarker] = useState([])
-    const [Type, setType] = useState('')    //Search, Info, Arround, Filter
+    const [Type, setType] = useState('')    //Search, Info, Arround, Filter, Favorite
 
     const markPlaces = (places, type) => {
         if(places) {

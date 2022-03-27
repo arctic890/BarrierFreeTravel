@@ -7,41 +7,68 @@ function MapL(props) {
 
   const defaultlng = 126.529417
   const defaultlat = 33.361417
-  const [Zoom, setZoom] = useState(11)
-  const [Clng, setClng] = useState(defaultlng)
-  const [Clat, setClat] = useState(defaultlat)
+  //const [Zoom, setZoom] = useState(11)
+  //const [Clng, setClng] = useState(defaultlng)
+  //const [Clat, setClat] = useState(defaultlat)
+  const [Map, setMap] = useState(null)
+  const [Maps, setMaps] = useState(null)
 
   let markers = props.marker
   let type = props.type
   console.log(markers)
 
   useEffect(() => {
-    if (type=='Info'){
-      setClng(markers[0].geometry.coordinates[0])
-      setClat(markers[0].geometry.coordinates[1])
-      setZoom(17)
-    } else if (type=='Arround'){
-      setZoom(15)
-    } else {
-      setClng(defaultlng)
-      setClat(defaultlat)
-      setZoom(11)
+
+    if (markers.length != 0){
+      console.log('bounds')
+      const bounds = getMapBounds(Map,Maps,markers)
+      Map.fitBounds(bounds)
+      bindResizeListener(Map,Maps,bounds)
     }
   
   }, [props])
+
+  const getMapBounds = (map, maps, markers) => {
+    //console.log('bounded')
+    const bounds = new maps.LatLngBounds()
+    markers.forEach((marker)=> {
+      bounds.extend(new maps.LatLng(
+        marker.geometry.coordinates[1],
+        marker.geometry.coordinates[0]
+      ))
+    })
+    return bounds
+  }
+
+  const handleApiLoaded=(map,maps) => {
+    //console.log('loaded2')
+    setMap(map)
+    setMaps(maps)
+  }
+
+  const bindResizeListener = (map,maps,bounds)=> {
+    maps.event.addDomListenerOnce(map, 'idle', ()=> {
+      maps.event.addDomListener(window, 'resize', ()=> {
+        map.fitBounds(bounds)
+      })
+    })
+  }
 
   return (
     <div className='map'>
         <GoogleMapReact
             bootstrapURLKeys = {{key: "AIzaSyAe9nEsSOH42iZgyTvELDZjO8kKJF8P3Ik"}}
-            zoom={Zoom}
-            center={{lat: Clat, lng: Clng}}
+            defaultZoom={11}
+            defaultCenter={{lat: defaultlat, lng: defaultlng}}
+            yesIWantToUseGoogleMapApiInternals
+            onGoogleApiLoaded={({map,maps})=> handleApiLoaded(map, maps)} //map: map obj   maps:api obj
         >
           {markers.length != 0 && markers.map((marker,index)=> {
             return (
                 <Marker 
                 key={index} 
                 marker={marker} 
+                type={type}
                 lng={marker.geometry.coordinates[0]} 
                 lat={marker.geometry.coordinates[1]}
                 />
