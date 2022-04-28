@@ -3,7 +3,7 @@ import Axios from 'axios'
 import { useSelector } from "react-redux";
 import {MdFavorite, MdDirectionsCar, MdRecordVoiceOver} from 'react-icons/md'
 import {FaToilet, FaCrutch} from 'react-icons/fa'
-import './recFilter.css'
+import './filter.css'
 
 
 function InfoFilter(props) {

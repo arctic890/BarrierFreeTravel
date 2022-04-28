@@ -12,7 +12,7 @@ top: 110px;
     border-radius: 6px;
     padding: 1px;
     background-color: white;
-    border: solid 1.5px #a8c6fa;;
+    border: solid 1.5px #a8c6fa;
 }
 
 .recBox2:hover {
@@ -29,7 +29,7 @@ top: 110px;
 
 .infoFilter{
     position: absolute;
-    right: 97px;
+    right: 8vw;
     flex-direction: column;
     flex-wrap: wrap;
 }
@@ -43,7 +43,7 @@ top: 110px;
     border-radius: 6px;
     padding: 1px;
     background-color: white;
-    border: solid 1.5px #a8c6fa;;
+    border: solid 1.5px #a8c6fa;
 }
 
 .filterBox:hover{

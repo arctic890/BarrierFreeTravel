@@ -57,11 +57,11 @@ function MapL(props) {
   return (
     <div className='map'>
         <GoogleMapReact
-            bootstrapURLKeys = {{key: "AIzaSyAe9nEsSOH42iZgyTvELDZjO8kKJF8P3Ik"}}
+            bootstrapURLKeys = {{key: "AIzaSyAe9nEsSOH42iZgyTvELDZjO8kKJF8P3Ik&region=KR"}}
             defaultZoom={11}
             defaultCenter={{lat: defaultlat, lng: defaultlng}}
             yesIWantToUseGoogleMapApiInternals
-            onGoogleApiLoaded={({map,maps})=> handleApiLoaded(map, maps)} //map: map obj   maps:api obj
+            onGoogleApiLoaded={({map,maps})=> handleApiLoaded(map, maps)} //map: map obj   maps:api 
         >
           {markers.length != 0 && markers.map((marker,index)=> {
             return (

@@ -38,9 +38,8 @@ function Comment(props) {
     }
 
     return (
-        <form style={{display: 'flex'}} onSubmit={onSubmit}>
-            <textarea 
-                style={{width: '100%'}}
+        <form style={{display: 'flex'}} onSubmit={onSubmit} className='comForm'>
+            <textarea className='textA'
                 onChange={handleClick}
                 value={commentV}
                 placeholder="댓글 추가..."

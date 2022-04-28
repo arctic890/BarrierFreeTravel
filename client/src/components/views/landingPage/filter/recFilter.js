@@ -4,7 +4,7 @@ import {BsEyeSlash} from 'react-icons/bs'
 import {FaBrain} from 'react-icons/fa'
 import {GiBabyBottle} from 'react-icons/gi'
 import {MdOutlineAccessibleForward,MdOutlineAccessible,MdHearingDisabled,MdFitnessCenter, MdOutlineElderly} from 'react-icons/md'
-import './recFilter.css'
+import './filter.css'
 
 function RecFilter(props) {
 

@@ -28,7 +28,7 @@ function InfoList(props) {
                 <li>{place.fee}</li>
                 <li>보조기기 대여 {place.equipment}</li>
                 <li>편의/부대시설 {place.facility}</li>
-                <li className='ends'>해설사 {place.curator}</li>
+                <li className='end'>해설사 {place.curator}</li>
                 <li className='desc'>{place.description}</li>
             </div>
         )
