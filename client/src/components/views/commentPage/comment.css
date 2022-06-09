@@ -23,16 +23,30 @@ h2 {
 .button2 {
     border-radius: 15px;
     background-color: #d4e3fc;
-    color: #75a9f9;
-    border-style: none;
+    border: 2px solid #d4e3fc;
+    color: #3d8af7;
+    font-weight: bolder;
     margin: 3px 3px 3px 0px;
     font-size: 11px;
     float: right;
 }
 
+.button2:hover{
+    background-color: #a8c6fa;
+    border: 2px solid #a8c6fa;
+}
+
 .commentBox .name{
     float: left;
     font-size: 14px;
+    font-weight: bold;
+}
+
+.commentBox .date{
+    margin-top: 2px;
+    float: left;
+    font-size: 14px;
+    color : #606060;
 }
 
 .content {

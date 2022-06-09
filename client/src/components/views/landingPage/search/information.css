@@ -59,7 +59,11 @@
     font-size: 11px;
     display: inline-flex;
     align-items: center;
-    justify-content: center; 
+    justify-content: center;
+}
+
+.button1:hover {
+    background-color: #d4e3fc;
 }
 
 .mark {

@@ -20,11 +20,17 @@
 
 .loginP button {
     border-radius: 15px;
-    border: solid 2px #a8c6fa;
-    color: #444444;
     margin: 3px 3px 3px; 
     padding: 3px 6px;
-    background-color: white;
+    background-color: #d4e3fc;
+    border: 2px solid #d4e3fc;
+    color: #3d8af7;
+    font-weight: bolder;
+}
+
+.loginP button:hover{
+    background-color: #a8c6fa;
+    border: 2px solid #a8c6fa;
 }
 
 .loginL{

@@ -50,7 +50,7 @@ function Search(props) {
 
     const listResult = Search.map((result, index) => {
         return (
-        <div key={index} onClick={(event)=>clickResult(result,event)}>
+        <div className='searchR' key={index} onClick={(event)=>clickResult(result,event)}>
             <ul>
                 <li className='name'>{result.name}</li>
                 <li>{result.address}</li>

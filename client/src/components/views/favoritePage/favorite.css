@@ -1,0 +1,35 @@
+.favtable {
+    width: 100%;
+    margin: 2rem auto;
+    border: 2px solid #75a9f9;
+    background-color:white;
+    border-collapse: collapse;
+}
+
+.favhead{
+    background-color: #75a9f9;
+}
+
+.favhead th{
+    padding: 4px;
+}
+
+.tbody td {
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 7px;
+    border-top: 1px solid #a8c6fa;
+}
+
+.favbut {
+    border-radius: 15px;
+    background-color: #d4e3fc;
+    border: 2px solid #d4e3fc;
+    color: #3d8af7;
+    font-weight: bolder;
+}
+
+.favbut:hover{
+    background-color: #a8c6fa;
+    border: 2px solid #a8c6fa;
+}

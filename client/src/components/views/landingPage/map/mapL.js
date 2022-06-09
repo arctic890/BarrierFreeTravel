@@ -57,7 +57,7 @@ function MapL(props) {
   return (
     <div className='map'>
         <GoogleMapReact
-            bootstrapURLKeys = {{key: "AIzaSyAe9nEsSOH42iZgyTvELDZjO8kKJF8P3Ik&region=KR"}}
+            bootstrapURLKeys = {{key: "mapKey&region=KR"}}
             defaultZoom={11}
             defaultCenter={{lat: defaultlat, lng: defaultlng}}
             yesIWantToUseGoogleMapApiInternals

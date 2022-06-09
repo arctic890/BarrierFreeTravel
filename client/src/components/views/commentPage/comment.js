@@ -35,11 +35,14 @@ function Comment() {
     }
 
     const myComments = Comments.map((comment, index)=> {
+        var date = new Date(comment.createdAt)
+        var comDate = date.getFullYear()+'-'+date.getMonth()+'-'+date.getDate()
         return (
             <div key={index}>
                 <ul className='commentBox'>
                     <li className='name'>{comment.placeId.name}</li>
-                    <li className='button2'><button onClick={()=>commentRem(comment._id)}>삭제</button></li>
+                    <li className='date'>{comDate}</li>
+                    <li><button className='button2' onClick={()=>commentRem(comment._id)}>삭제</button></li>  
                     
                     <br/>
                     <li className='content'>{comment.content}</li>

@@ -1,6 +1,7 @@
 import Axios from 'axios'
 import React,{useState, useEffect} from 'react'
 import Recommend from '../landingPage/search/recommend'
+import './favorite.css'
 
 function Favorite() {
 
@@ -47,7 +48,7 @@ function Favorite() {
             <td>{favorite.placeId.name}</td>
             <td><Recommend placeId={favorite.placeId}/></td>
             <td>{favorite.placeId.address}</td>
-            <td><button onClick={()=>onClickRem(favorite.placeId, favorite.userFrom)}>삭제</button></td>
+            <td><button className='favbut' onClick={()=>onClickRem(favorite.placeId, favorite.userFrom)}>삭제</button></td>
         </tr>
     })
 
@@ -56,20 +57,19 @@ function Favorite() {
     return (   
         <div style={{width: '85%', margin: '3rem auto'}}>
             <h2> 즐겨찾기</h2>
-            <hr/>
             
-            <table>
-                <thead>
+            <table className='favtable'>
+                <thead className='favhead'>
                     <th>이름</th>
                     <th>추천</th>
                     <th>위치</th>
                     <th></th>
                 </thead>
-                <tbody>
+                <tbody className='tbody'>
                     {listCards}
                 </tbody>
             </table>
-            <hr/>
+           
             <button>지도에서 보기</button>
         </div>
     )
