@@ -73,6 +73,7 @@
     color: #3d8af7;
     padding: 3px;
     margin: 2px;
+    font-weight: bolder;
     display:inline-block;
 }
 
@@ -106,6 +107,10 @@
     word-wrap: break-word;
     margin-top: 0px;
     margin-bottom: 3px;
+}
+
+#courseRec{
+    margin-top: 5px;
 }
 
 #heart {

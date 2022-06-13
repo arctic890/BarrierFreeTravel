@@ -10,5 +10,13 @@ router.post('/getArround', (req,res)=>{
         })
 })
 
+router.post('/addArround', (req,res)=>{
+    const arround = new Arround(req.body)
+    arround.save((err, doc)=>{
+        if(err) return res.status(400).send(err)
+        return res.status(200).json({success:true})
+    })
+})
+
 
 module.exports = router;

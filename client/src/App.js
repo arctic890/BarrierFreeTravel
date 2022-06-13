@@ -13,8 +13,8 @@ import Auth from './hoc/auth'
 import NavBar from "./components/views/navBar/navBar";
 import Footer from "./components/views/footer/footer";
 import Favorite from "./components/views/favoritePage/favorite";
-import AddPlace from "./components/views/addPlace";
 import Comment from "./components/views/commentPage/comment"
+import Importcsv from "./components/views/importcsv";
 
 // This site has 3 pages, all of which are rendered
 // dynamically in the browser (not server rendered).
@@ -38,7 +38,7 @@ export default function BasicExample() {
             <Route exact path='/register' element={Auth(Register, false)} />
             <Route exact path='/favorite' element={Auth(Favorite, true)} />
             <Route exact path='/comment' element={Auth(Comment, true)} />
-            <Route exact path='/addPlace' element={Auth(AddPlace, null)} />
+            <Route exact path='/importcsv' element={Auth(Importcsv, null)} />
         </Routes>
       </div>
       <Footer />

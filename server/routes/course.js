@@ -10,5 +10,13 @@ router.post('/getCourse', (req,res)=>{
         })
 })
 
+router.post('/addCourse', (req,res)=>{
+    const course = new Course(req.body)
+    course.save((err, doc)=>{
+        if(err) return res.status(400).send(err)
+        return res.status(200).json({success:true})
+    })
+})
+
 
 module.exports = router;

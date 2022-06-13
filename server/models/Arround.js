@@ -12,7 +12,7 @@ const arroundSchema = mongoose.Schema({
     name: {
         type: String
     },
-    dsitance: {
+    distance: {
         type: String
     },
     address: {

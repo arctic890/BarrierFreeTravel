@@ -18,5 +18,12 @@ router.post('/filter', (req,res)=>{
             return res.status(200).json({success: true, result})
         })
 })
+router.post('/addRecommend',(req, res)=>{
+    const recommend = new Recommend(req.body)
+    recommend.save((err, doc)=>{
+        if(err) return res.status(400).send(err)
+        return res.status(200).json({success:true})
+    })
+})
 
 module.exports = router;

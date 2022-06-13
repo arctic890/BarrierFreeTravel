@@ -39,7 +39,7 @@ function InfoList(props) {
             <div key={index}>
                 <ul>
                     <li className='name'>{arround.name}</li>
-                    <li>{arround.distance}</li>
+                    <li>{arround.distance+'km'}</li>
                     <li>{arround.category}</li>
                     <li>{arround.address}</li>
                     <li>{arround.phone}</li>
@@ -78,7 +78,7 @@ function InfoList(props) {
         const mark = (rec) => {
             if (rec) {
                 return (
-                    <div className='mark'>추천</div>
+                    <div className='mark'>추천 코스</div>
                 )
             }
         }
@@ -86,7 +86,7 @@ function InfoList(props) {
             return (
                 <div key={index}>
                     <ul>
-                        <li>{mark(course.recommend)}</li>
+                        <li id='courseRec'>{mark(course.recommend)}</li>
                         <li className='end' >
                             <p id='course'>{course.course}</p>
                         </li>
